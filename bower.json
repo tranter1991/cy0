@@ -1,0 +1,14 @@
+{
+  "name": "cy0",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tranter1991/cy0",
+  "authors": [
+    "tranter1991 <freelibao@gmail.com>"
+  ],
+  "license": "GPL",
+  "dependencies": {
+    "backbone": "~1.2.3",
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4"
+  }
+}

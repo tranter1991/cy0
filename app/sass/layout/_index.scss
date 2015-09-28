@@ -1,0 +1,48 @@
+// 首页容器
+$header-height:  54px;
+$header-bg-color: #3871c4;
+$header-font-color: #fff;
+$footer-height: 30px;
+$tmp-bg-color: #eee;
+// 整页的三行布局
+.page-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    .header {
+        height: $header-height;
+        color: $header-font-color;
+        background-color: $header-bg-color;
+        line-height: $header-height;
+        width: 100%;
+        a {
+            color: $header-font-color;
+        }
+    }
+    .content {
+        flex: 1;
+        background-color: #ccc;
+    }
+
+    .footer {
+        width: 100%;
+        height: $footer-height;
+    }
+}
+
+// content容器
+.page-content-container {
+    height: 100%;
+    display: flex;
+    .page-content-left {
+        flex: 1;
+        background-color: $tmp-bg-color;
+    }
+
+    .page-content-right {
+        width: 188px;
+        background-color: $tmp-bg-color;
+    }
+}

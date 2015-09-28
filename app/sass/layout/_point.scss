@@ -1,0 +1,16 @@
+$point-item-width:  125px;
+$point-itme-height:  70px;
+$point-item-margin: 10px 4px 1px 6.5px;
+.point-list {
+    font-size: 17px;
+    li {
+        float: left;
+        width: $point-item-width;
+        height: $point-itme-height;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        margin: $point-item-margin;
+        text-align: center;
+    }
+}
+

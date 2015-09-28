@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>canyin</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="app/css/style.css">
+
+</head>
+
+<body>
+    <div id="point-page-container" class="page-container">
+        <!-- 头部 -->
+        <div id="home-header" class="header container-fluid">
+            <div class="row">
+                <div class="col-xs-3">
+                    canyin
+                </div>
+                <div class="col-xs-2">
+                    <a class="switch-point" href="#">客位</a> | <a class="switch-bill" href="#">账单</a>
+                </div>
+                <div class="col-xs-7">
+                    <a class="refresh-point" href="#">刷新客位</a> | <a href="#">预订单</a> | <a href="#">预点单</a> | <a href="#">修改密码</a> | <a href="#">退出营业</a>
+                </div>    
+            </div>
+        </div>
+        <!-- /头部 -->
+        <!-- 中间 -->
+        <div class="content page-content-container">
+            <!-- 客位容器 -->
+            <div id="point-container" class="page-content-left">
+                <!-- 区域 -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="btn-group col-xs-6">
+                            <button class="btn btn-default" type="button">全部(40)</button>
+                            <button class="btn btn-default" type="button">空闲(20)</button>
+                            <button class="btn btn-default" type="button">占用(11)</button>
+                            <button class="btn btn-default" type="button">埋单(12)</button>
+                            <button class="btn btn-default" type="button">预订(0)</button>
+                        </div>
+                        <div class="btn-group col-xs-6">
+                            <button class="btn btn-default" type="button">全部类型</button>
+                            <button class="btn btn-default" type="button">散台</button>
+                            <button class="btn btn-default" type="button">包间</button>
+                            <button class="btn btn-default" type="button">外卖</button>
+                        </div>
+                        <div class="btn-group col-xs-12">
+                            <button class="btn btn-default" type="button">全部区域</button>
+                            <button class="btn btn-default" type="button">消费区域1</button>
+                            <button class="btn btn-default" type="button">消费区域2</button>
+                            <button class="btn btn-default" type="button">消费区域3</button>
+                            <button class="btn btn-default" type="button">消费区域4</button>
+                            <button class="btn btn-default" type="button">VIP消费区域</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 客位 -->
+                <ul class="point-list"></ul>
+                
+            </div>
+            <!-- /客位容器 -->
+            <!-- 右侧功能区 -->
+            <div id="point-operation" class="page-content-right ">
+                <!-- 功能列表 -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <button class="col-xs-6">退单</button>
+                        <button class="col-xs-6">催单</button>
+                        <button class="col-xs-6">品项赠送</button>
+                        <button class="col-xs-6">品项估清</button>
+                        <button class="col-xs-6">品项变价</button>
+                        <button class="col-xs-6">打印客单</button>
+                        <button class="col-xs-6">修改开单</button>
+                        <button class="col-xs-6">更换客位</button>
+                        <button class="col-xs-6">核对单据</button>
+                        <button class="col-xs-6">已结账单</button>
+                        <button class="col-xs-6">关账</button>
+                        <button class="col-xs-6">结班</button>
+                        <button class="col-xs-6">押金</button>
+                        <button class="col-xs-6">单品转台</button>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-success btn-lg btn-block">结算</button>
+                    <input class="form-control" placeholder="快速查找">
+                </div>
+
+                <!-- 小键盘 -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <button class="col-xs-4">1</button>
+                        <button class="col-xs-4">2</button>
+                        <button class="col-xs-4">3</button>
+                        <button class="col-xs-4">3</button>
+                        <button class="col-xs-4">4</button>
+                        <button class="col-xs-4">6</button>
+                        <button class="col-xs-4">7</button>
+                        <button class="col-xs-4">8</button>
+                        <button class="col-xs-4">9</button>
+                        <button class="col-xs-4">ABC</button>
+                        <button class="col-xs-4">0</button>
+                        <button class="col-xs-4">C</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /右侧功能区 -->
+        </div>
+        <!-- /中间内容 -->
+
+        <!-- 底部统计 -->
+        <div class="footer container-fluid">
+            <div class="row">
+                <div class="col-xs-6">
+                    当前营业：开台：11 结算：20，未结算20
+                </div>
+                <div class="col-xs-6">
+                    2015-9-24 11:28:31
+                </div>
+            </div>
+        </div>
+        <!-- /底部统计 -->
+    </div>
+    
+    <script type="text/javascript">
+        var app = {}; 
+    </script>
+
+    <script type="text/template" id="point-item-template">
+        <li data-state="<%= pointState %>"> <%= pointName %></li>
+    </script>
+    
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="app/js/views/header-view.js"></script>
+    <script src="app/js/views/header-view.js"></script>
+
+    <script src="app/app.js"></script>
+
+</body>
+</html>
